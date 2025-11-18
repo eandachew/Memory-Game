@@ -111,3 +111,29 @@ document.addEventListener('DOMContentLoaded', () => {
     [firstCard, secondCard] = [null, null];
     lockBoard = false;
   }
+  // Timer Logic
+  function startTimer() {
+    timerInterval = setInterval(() => {
+      timer++;
+      timeElement.textContent = timer;
+    }, 1000);
+  }
+// Game end logic 
+  function endGame() {
+    clearInterval(timerInterval);
+    setTimeout(() => {
+      finalMoves.textContent = moves;
+      finalTime.textContent = timer;
+      winMessage.style.display = 'flex';
+    }, 1000);
+  }
+  // Event listeners to restart.
+    restartButton.addEventListener('click', initGame);
+  playAgainButton.addEventListener('click', () => {
+    winMessage.style.display = 'none';
+    initGame();
+  });
+
+  initGame();
+  window.addEventListener('resize', initGame);
+});
