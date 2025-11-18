@@ -93,3 +93,45 @@ header h1 {
   color: white;
   cursor: default;
 }
+
+/* Footer */
+footer {
+  text-align: center;
+  color: #666;
+  margin-top: 20px;
+}
+
+/* Win message popup */
+.win-message {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.win-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.play-again-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.play-again-btn:hover {
+  background: #218838;
+}
