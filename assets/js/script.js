@@ -49,3 +49,65 @@ document.addEventListener('DOMContentLoaded', () => {
       gameBoard.appendChild(card);
     });
   }
+
+  // Utility Function
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+  // Card Interaction Logic
+    function flipCard() {
+    if (lockBoard || this === firstCard || this.classList.contains('matched')) return;
+
+    if (!gameStarted) { startTimer(); gameStarted = true; }
+
+    this.classList.add('flipped');
+
+    if (!firstCard) {
+      firstCard = this;
+      return;
+    }
+
+    secondCard = this;
+    moves++;
+    movesCount.textContent = moves;
+    checkForMatch();
+  }
+
+  function checkForMatch() {
+    const isMatch = firstCard.querySelector('.card-back').textContent ===
+                    secondCard.querySelector('.card-back').textContent;
+
+    if (isMatch) {
+      disableCards();
+      matchedPairs++;
+      if (matchedPairs === totalPairs) endGame();
+    } else {
+      unflipCards();
+    }
+  }
+
+  function disableCards() {
+    firstCard.classList.add('matched');
+    secondCard.classList.add('matched');
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+    resetBoard();
+  }
+
+  function unflipCards() {
+    lockBoard = true;
+    setTimeout(() => {
+      firstCard.classList.remove('flipped');
+      secondCard.classList.remove('flipped');
+      resetBoard();
+    }, 1000);
+  }
+
+  function resetBoard() {
+    [firstCard, secondCard] = [null, null];
+    lockBoard = false;
+  }
