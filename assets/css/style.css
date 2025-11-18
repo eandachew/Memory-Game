@@ -32,3 +32,32 @@ header h1 {
   color: #666;
   font-size: 14px;
 }
+
+/* Game info section */
+.game-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.moves, .timer {
+  font-weight: bold;
+}
+
+.restart-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.restart-btn:hover {
+  background: #0056b3;
+}
