@@ -19,24 +19,32 @@ body {
 
 /* Container and header styles */
 .container {
-  max-width: 800px;
+  width: 100%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 header {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  width: 100%;
 }
 
-header h1 {
-  color: #333;
+h1 {
+  font-size: 2.8rem;
   margin-bottom: 10px;
+  color: #3498db;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .instructions {
-  color: #666;
-  font-size: 14px;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #bdc3c7;
 }
 
 /* Game info section */
