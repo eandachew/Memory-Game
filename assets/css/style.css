@@ -52,28 +52,45 @@ h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-  padding: 15px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.2);
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .moves, .timer {
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #3498db;
+  display: flex;
+  align-items: center;
+}
+
+.moves i, .timer i {
+  margin-right: 8px;
+  font-size: 1.4rem;
 }
 
 .restart-btn {
-  background: #007bff;
+  padding: 12px 24px;
+  background: #e74c3c;
   color: white;
   border: none;
-  padding: 8px 15px;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .restart-btn:hover {
-  background: #0056b3;
+  background: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 /* Game board and cards */
 .game-board {
