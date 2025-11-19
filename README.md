@@ -82,11 +82,12 @@ These colours give the game a **clean and vibrant look** while keeping it access
   - Under 414px: buttons, controls, and score areas resize and stack for mobile.  
   - Under 320px: further scaling down of the game area for very small screens.
 
-## Home page screenshot 
+#### Home page screenshot 
 <div align="center"><img src="assets/images/home-page.png"></div>
+- screenshots created using [Am I responsive](http://ami.responsivedesign.is/)
 
 
-## Icons
+#### Icons
 
 For the memory card icons, I used built-in Unicode emoji characters rather than external image files.  
 These emojis are supported natively by all modern browsers and operating systems, so they do not require any additional image hosting or licensing.
@@ -149,33 +150,26 @@ Below are the pages and versions for different devices.
 **Step 1: Sign in to GitHub**  
 I first signed into GitHub to access repositories.
 **Step 2: Locate the Template**  
-I navigated to the repository.  
+I navigated to the repository.
+-<div float="center">
+           <img src="assets/images/select-new-repository.png" />
+         </div>
 **Step 3: Use the Template**  
 I clicked the "Use this template" button.   
 **Step 4: Name the Repository**  
 I named the new repository **Memory-Game** and created it.  
-**Step 5: Clone the Repository Locally**  
-I cloned the repository to my local machine to start working:  
-**Step 6: Create Files and Folders**
-I used the terminal to create my project structure:
-- index.html 
+-<div float="center">
+           <img src="assets/images/memory-game.png" />
+         </div>
 
-- assets/ folder  
-  
-- css/ folder and style.css file  
-
-- wireframes/ folder  
-
-- js/ folder and main.js file  
-
-**Step 7: Add, Commit, and Push Files**
+**Step 5: Add, Commit, and Push Files**
 - Once all files were created, I added, committed, and pushed them to GitHub:
 
 git add .
 git commit -m "Initial commit"
 git push origin main
 
-**Step 8: Git Workflow During Development**
+**Stepv 6: Git Workflow During Development**
 
 Throughout the project, I used **Git** to save and store progress:
 
@@ -183,13 +177,28 @@ Throughout the project, I used **Git** to save and store progress:
 - git commit -m "Message" → to commit changes  
 - git push origin main → to push changes to GitHub  
 
-**Step 9: Deploy to GitHub Pages**
+**Step 7: Deploy to GitHub Pages**
 
 1. Open the project repository on GitHub.  
 2. Go to **Settings**.   
+-<div float="center">
+           <img src="assets/images/setting.png" />
+         </div>
 3. Scroll down to the **GitHub Pages** section.  
-4. Under **Source**, select the **Main Branch**.  
+-<div float="center">
+           <img src="assets/images/pages.png" />
+         </div>
+4. Under **Source**, select the **Main Branch**.
+-<div float="center">
+           <img src="assets/images/select-main.png" />
+         </div>  
 5. The page refreshes and a link to the live site appears.
+-<div float="center">
+           <img src="assets/images/link-live.png" />
+         </div>
+
+
+
 
 **Deployment Issue**
 At first, the deployment did not work because GitHub created an extra folder inside the repository.  
