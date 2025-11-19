@@ -1,6 +1,25 @@
 # Memory-Game
-## UX
+## Table of Contents
+1. [UX](#ux)
+   - [Project Goals](#project-goals)
+   - [User Stories](#user-stories)
+   - [Design Choices](#design-choices)
+   - [Wireframes](#wireframes)
+2. [Features](#features)
+   - [Existing Features](#existing-features)
+   - [Features Left to Implement](#features-left-to-implement)
+3. [Technologies Used](#technologies-used)
+4. [Testing](#testing)
+   - [Bugs Discovered ](#bugs-discovered)
+   - [Solved Issues](#solved-issues)
+5. [Deployment](#deployment)
+   - [How to Run This Project Locally](#how-to-run-this-project-locally)
+6. [Credits](#credits)
+   - [Content and code ](#content-and-code) 
+   - [Acknowledgement](#acknowledgement)
 
+---
+## UX
 ### Project Goals
 This project aims to build an interactive front-end website using HTML, CSS, and JavaScript.  
 I have decided to build a Memory Game that allows users to enjoy a fun and challenging pattern-matching experience. I have used the knowledge I've learned in the course to date, as well as good user experience principles, to create a responsive, well-designed, and functional game.
@@ -63,6 +82,10 @@ These colours give the game a **clean and vibrant look** while keeping it access
   - Under 414px: buttons, controls, and score areas resize and stack for mobile.  
   - Under 320px: further scaling down of the game area for very small screens.
 
+## Home page screenshot 
+<div align="center"><img src="assets/images/home-page.png"></div>
+
+
 ## Icons
 
 For the memory card icons, I used built-in Unicode emoji characters rather than external image files.  
@@ -96,7 +119,6 @@ Below are the pages and versions for different devices.
 - **Responsive Design:** Adapts to desktop, tablet, and mobile screen sizes.
 
 ### Features Left to Implement
-- Move counter and timer.
 - High score storage using localStorage.
 - Difficulty levels (more cards).
 
@@ -107,6 +129,7 @@ Below are the pages and versions for different devices.
 - **CSS3** — for styling and responsive design  
 - **JavaScript** — for game logic and interactivity 
 - **Balsamiq** - used to create Wireframes for the project during the initial planning stage. 
+- **Git hub** - Github was used to create and store the project repository.
 
 ---
 
@@ -119,3 +142,80 @@ Below are the pages and versions for different devices.
 **Bug Discovered**
 - Modal opacity issues on small screens  
 **Fix:** Adjusted CSS to properly overlay modals and center content.
+
+
+## Deployment
+
+**Step 1: Sign in to GitHub**  
+I first signed into GitHub to access repositories.
+**Step 2: Locate the Template**  
+I navigated to the repository.  
+**Step 3: Use the Template**  
+I clicked the "Use this template" button.   
+**Step 4: Name the Repository**  
+I named the new repository **Memory-Game** and created it.  
+**Step 5: Clone the Repository Locally**  
+I cloned the repository to my local machine to start working:  
+**Step 6: Create Files and Folders**
+I used the terminal to create my project structure:
+- index.html 
+
+- assets/ folder  
+  
+- css/ folder and style.css file  
+
+- wireframes/ folder  
+
+- js/ folder and main.js file  
+
+**Step 7: Add, Commit, and Push Files**
+- Once all files were created, I added, committed, and pushed them to GitHub:
+
+git add .
+git commit -m "Initial commit"
+git push origin main
+
+**Step 8: Git Workflow During Development**
+
+Throughout the project, I used **Git** to save and store progress:
+
+- git add . → to stage changes  
+- git commit -m "Message" → to commit changes  
+- git push origin main → to push changes to GitHub  
+
+**Step 9: Deploy to GitHub Pages**
+
+1. Open the project repository on GitHub.  
+2. Go to **Settings**.   
+3. Scroll down to the **GitHub Pages** section.  
+4. Under **Source**, select the **Main Branch**.  
+5. The page refreshes and a link to the live site appears.
+
+**Deployment Issue**
+At first, the deployment did not work because GitHub created an extra folder inside the repository.  
+That folder contained the `assets/`, `index.html`, and `README.md` instead of placing them in the root of the repository.  
+Since GitHub Pages only looks for `index.html` in the **root** (or `/docs` if configured), the site returned a 404 error.
+
+**Fix**
+- Deleted the unnecessary inner folder.  
+- Moved `assets/`, `index.html`, and `README.md` to the root of the repository.  
+- Re-deployed from the `main` branch, root folder.  
+
+**Deployed Site**
+The live site can be viewed here:  
+👉 [Project Link](https://eandachew.github.io/Memory-Game/)
+- 
+
+### How to Run This Project Locally
+1. repository.
+2. Open index.html in your browser or run a local server.
+
+---
+
+## Credits
+
+### Content and code 
+- Game logic written by me using HTML, CSS, and JavaScript.
+### Acknowledgement
+
+- Code Institute for getting me to this point
