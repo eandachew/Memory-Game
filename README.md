@@ -37,3 +37,85 @@ My web page consists of:
 - As the developer, I want users to understand the rules clearly.  
 - As the developer, I want the game to work on all screen sizes and devices.  
 - As the developer, I want to be able to easily maintain and extend the game with new features.
+
+### Design Choices
+#### Colour Scheme
+- **Background:** `linear-gradient(135deg, #2c3e50, #1a2530)` (dark gradient backdrop)  
+- **Primary Accent:** `#4caf50` (green — used on flipped cards, buttons, header highlights)  
+- **Card Default:** `#ddd` (light grey for card backs)  
+- **Text:** `#ffffff` (white on dark backgrounds, dark on light cards)  
+- **Hover Button:** `#45a049` (darker green shade for button hover)
+
+These colours give the game a **clean and vibrant look** while keeping it accessible and readable.
+
+---
+
+#### Typography
+- **Font Family:** `Arial, sans-serif` for general layout  
+- **Fallback:** `Segoe UI`, `Tahoma`, `Verdana` and other web-safe sans-serif fonts  
+- This ensures **readability and consistency** across different devices.
+
+---
+
+#### Layout & Responsiveness
+- **Grid Layout:** The board uses CSS Grid to create a 4x4 layout of 100x100px cards.
+- **Responsive Media Queries:**  
+  - Under 414px: buttons, controls, and score areas resize and stack for mobile.  
+  - Under 320px: further scaling down of the game area for very small screens.
+
+## Icons
+
+For the memory card icons, I used built-in Unicode emoji characters rather than external image files.  
+These emojis are supported natively by all modern browsers and operating systems, so they do not require any additional image hosting or licensing.
+
+['🍎','🍌','🍇','🍒','🍓','🍑','🍍','🥝'];
+
+---
+
+### Wireframes
+
+I've created Wireframes to plan the layout and design of the Memory Game.  
+Below are the pages and versions for different devices. 
+
+#### Game Board / Play Area
+- **Desktop:** [Link to PDF](assets/wireframes/Milestone-project-2-desktop.pdf)  
+- **Tablet:** [Link to PDF](assets/wireframes/Milestone-project-2-Ipad%20.pdf)  
+- **Mobile:** [Link to PDF](assets/wireframes/milestone-project-2-mobile%20.pdf)  
+
+
+
+---
+
+## Features
+
+### Existing Features
+- **Header Section:** Displays the game title.
+- **Game Board:** A grid of hidden cards (4x4 layout) that can be flipped to reveal icons.
+- **Matching Logic:** Flipped cards stay revealed if they match.
+- **Restart Button:** Allows players to restart the game at any time.
+- **Responsive Design:** Adapts to desktop, tablet, and mobile screen sizes.
+
+### Features Left to Implement
+- Move counter and timer.
+- High score storage using localStorage.
+- Difficulty levels (more cards).
+
+---
+
+## Technologies Used
+- **HTML5** — for structure and content  
+- **CSS3** — for styling and responsive design  
+- **JavaScript** — for game logic and interactivity 
+- **Balsamiq** - used to create Wireframes for the project during the initial planning stage. 
+
+---
+
+## Testing
+- Tested across various screen sizes (desktop, tablet, and mobile).  
+- Checked for flipped card behavior, match logic, and restart functionality.  
+- Verified hover effects and button click responses.
+- Verified responsiveness using Chrome DevTools.
+---
+**Bug Discovered**
+- Modal opacity issues on small screens  
+**Fix:** Adjusted CSS to properly overlay modals and center content.
