@@ -335,9 +335,13 @@ Below are the pages and versions for different devices.
 ### Code Validation
 
 - **HTML Validation:** Passed — no errors using W3C Validator  
-- **CSS Validation:** Passed — no errors using W3C CSS Validator  
-- **JavaScript Validation:** Passed — no critical errors using JSHint  
+<div align="center"><img src="assets/images/html-checked.png"></div>
 
+- **CSS Validation:** Passed — no errors using W3C CSS Validator  
+<div align="center"><img src="assets/images/css-validator-checked.png"></div>
+
+- **JavaScript Validation:** Passed — no critical errors using JSHint  
+<div align="center"><img src="assets/images/jshint-valid.png"></div>
 ---
 
 
