@@ -41,14 +41,13 @@ My web page consists of:
 - As a new user, I would like to see a responsive layout that works on mobile, tablet, and desktop.  
 
 #### Repeat User
-- As a repeat user, I would like to continue playing without losing my progress.  
+- As a repeat user, I would like to imporve my time fo finish the game.  
 - As a repeat user, I would like to be able to restart the game quickly.  
 - As a repeat user, I would like to track my matches and see which pairs I have already found.  
 - As a repeat user, I would like to see a message when I complete the game.  
 
 #### Regular User
-- As a regular user, I would like the game to provide a fun and challenging experience.  
-- As a regular user, I would like the game to increase difficulty as I progress.  
+- As a regular user, I would like the game to provide a fun and challenging experience.    
 - As a regular user, I would like the interface to be visually appealing and interactive.  
 
 #### Game Owner / Developer
@@ -135,10 +134,282 @@ Below are the pages and versions for different devices.
 ---
 
 ## Testing
-- Tested across various screen sizes (desktop, tablet, and mobile).  
-- Checked for flipped card behavior, match logic, and restart functionality.  
-- Verified hover effects and button click responses.
-- Verified responsiveness using Chrome DevTools.
+
+
+### User Stories Testing
+
+#### **New Visitor Stories**
+
+ **1. As a new user, I would like to know how to play the Memory Game upon opening the site**
+- **Expected:** Clear instructions visible immediately when page loads  
+- **Testing:** Opened the application and checked for visible instructions  
+- **Result:** Instructions displayed below game title:  
+  *"Match all the pairs! Click on a card to flip it and find its matching pair"*  
+- **Fix:** None required  
+<div float="center">
+           <img src="assets/images/info.png" />
+         </div>
+
+**2. As a new user, I would like to see the game rules clearly explained**
+- **Expected:** Simple, understandable gameplay rules  
+- **Testing:** Read the instruction text for clarity and completeness  
+- **Result:** Rules are concise and explain the core gameplay mechanic  
+- **Fix:** None required  
+
+**3. As a new user, I would like to start the game easily with a single click**
+- **Expected:** Game should begin without complex setup  
+- **Testing:** Clicked first card to begin gameplay  
+- **Result:** Game started immediately with timer activation  
+- **Fix:** None required  
+<div float="center">
+           <img src="assets/images/single-click.png" />
+         </div>
+
+**4. As a new user, I would like the game to provide visual feedback when I flip cards**
+- **Expected:** Clear visual changes during card interactions  
+- **Testing:** Clicked multiple cards and monitored animation  
+- **Result:** Cards flip with smooth animation and change appearance when matched  
+- **Fix:** None required  
+<div float="center">
+           <img src="assets/images/match.png" />
+         </div>
+
+**5. As a new user, I would like to see a responsive layout on mobile, tablet, and desktop**
+- **Expected:** Layout should adapt to all screen sizes  
+- **Testing:** Tested using browser dev tools  
+- **Result:** Grid switches from 4 columns to 3 columns on small screens  
+- **Fix:** None required  
+
+<div float="center">
+           <img src="assets/images/small-screen.png" />
+         </div>
+---
+
+#### **Repeat User Stories**
+
+ **1. As a repeat user, I want to improve my time completion**
+- **Expected:** Ability to track times and beat personal bests  
+- **Testing:** Played multiple sessions and compared times  
+- **Result:** Timer provides clear and accurate time tracking  
+- **Fix:** None required  
+<div float="center">
+           <img src="assets/images/time.png" />
+         </div>
+
+ **2. As a repeat user, I want to quickly restart the game**
+- **Expected:** Single-click restart functionality  
+- **Testing:** Pressed restart button during gameplay  
+- **Result:** Game resets instantly with a fresh shuffle  
+- **Fix:** None required  
+<div float="center">
+           <img src="assets/images/restart.png" />
+         </div>
+
+ **3. As a repeat user, I want to track my matches visually**
+- **Expected:** Matched cards stay revealed  
+- **Testing:** Matched several pairs  
+- **Result:** Matched cards remain visible with distinct green color  
+- **Fix:** None required  
+<div float="center">
+           <img src="assets/images/match.png" />
+         </div>
+
+ **4. As a repeat user, I want a message when I complete the game**
+- **Expected:** Win notification  
+- **Testing:** Completed all pairs  
+- **Result:** Win message appears showing final moves and time  
+- **Fix:** None required  
+
+<div float="center">
+           <img src="assets/images/time.png" />
+         </div>
+---
+
+#### **Regular User Stories**
+
+**1. As a regular user, I want the game to be fun and challenging**
+- **Expected:** Engaging replayable gameplay  
+- **Testing:** Played multiple rounds  
+- **Result:** Random shuffle increases replayability and memory challenge  
+- **Fix:** None required  
+
+ **2. As a regular user, I want an appealing, interactive interface**
+- **Expected:** Visually pleasing UI with smooth interactions  
+- **Testing:** Reviewed design, animations, and user flow  
+- **Result:** Clean visuals with smooth flip animations  
+- **Fix:** None required  
+
+---
+
+#### **Game Owner / Developer Stories**
+
+**1. As the developer, I want users to have a seamless and bug-free experience**
+- **Expected:** No crashes or broken features  
+- **Testing:** Performed full test on interactions and logic  
+- **Result:** All features functioning correctly  
+- **Fix:** None required  
+
+**2. As the developer, I want users to clearly understand the rules**
+- **Expected:** Instructions must be easy to read and find  
+- **Testing:** Reviewed visibility and clarity  
+- **Result:** Instructions are prominently displayed and understandable  
+- **Fix:** None required  
+
+**3. As the developer, I want the game to work on all screen sizes**
+- **Expected:** Fully responsive layout  
+- **Testing:** Tested on multiple screens and browsers  
+- **Result:** Responsive behavior works correctly  
+- **Fix:** None required  
+
+<div align="center"><img src="assets/images/home-page.png"></div>
+
+**4. As the developer, I want the code to be easy to maintain and expand**
+- **Expected:** Clean, modular code  
+- **Testing:** Reviewed JavaScript structure  
+- **Result:** Functions are organized with clear separation of logic  
+- **Fix:** None required  
+
+### Manual Testing of Game Elements
+#### **Card Flip Functionality**
+- **Expected:** Clicking a card flips it to reveal the symbol with smooth animation  
+- **Testing:** Clicked multiple cards in succession and observed animation  
+- **Result:** Cards flipped correctly with smooth transition  
+- **Fix:** None required  
+
+#### **Card Matching Logic**
+- **Expected:** Two identical cards should stay flipped; non-matching pairs should flip back after 1 second  
+- **Testing:** Tested multiple matching and non-matching pairs  
+- **Result:** Matching pairs remained visible; non-matching flipped back correctly  
+- **Fix:** None required  
+
+#### **Move Counter**
+- **Expected:** Each pair attempt should increment the move counter by 1  
+- **Testing:** Made multiple moves and verified counter updates  
+- **Result:** Counter incremented accurately for each pair attempt  
+- **Fix:** None required  
+
+#### **Game Timer**
+- **Expected:** Timer should start on the first card click and run until game completion  
+- **Testing:** Started game and monitored timer progression  
+- **Result:** Timer started correctly and ran without interruption  
+- **Fix:** None required  
+
+#### **Restart Button**
+- **Expected:** Should reset game state, shuffle cards, and reset all counters  
+- **Testing:** Clicked restart button during active gameplay  
+- **Result:** Game reset completely with new card arrangement  
+- **Fix:** None required  
+
+#### **Win Condition**
+- **Expected:** Game should end and display win message when all 8 pairs are matched  
+- **Testing:** Systematically matched all pairs  
+- **Result:** Win message displayed with correct move count and time  
+- **Fix:** None required  
+
+#### **Play Again Button**
+- **Expected:** Should restart game and hide win message after victory  
+- **Testing:** Clicked play again button after winning  
+- **Result:** Game reset properly and win message was hidden  
+- **Fix:** None required  
+
+---
+
+### Double-Click Guard Test
+
+- **Expected:** Clicking the same card twice should not count as a move or break the game  
+- **Testing:** Clicked same card twice rapidly and monitored behavior  
+- **Result:** No move counted; gameplay continued normally  
+- **Fix:** None required  
+
+---
+
+### Responsiveness Testing
+
+- **Desktop (1200px+):** 6-column grid displayed perfectly  
+- **Tablet (768px):** 4-column grid maintained good layout  
+- **Mobile (375px):** Adjusted to a 3-column grid 
+
+<div align="center"><img src="assets/images/home-page.png"></div>
+---
+
+### Code Validation
+
+- **HTML Validation:** Passed — no errors using W3C Validator  
+- **CSS Validation:** Passed — no errors using W3C CSS Validator  
+- **JavaScript Validation:** Passed — no critical errors using JSHint  
+
+---
+
+
+### Bug Documentation
+
+#### **Resolved Bugs**
+
+**1. Card Matching Logic Issue**  
+- **Problem:** Incorrect card comparisons  
+- **Root Cause:** Compared DOM elements instead of data values  
+- **Fix:** Updated to use `dataset.value`  
+- **Status:** ✅ Fixed  
+
+**2. Timer Reset Issue**  
+- **Problem:** Timer did not always clear on restart  
+- **Root Cause:** Interval not cleared before creating new one  
+- **Fix:** Added `clearInterval()` before starting timer  
+- **Status:** ✅ Fixed  
+
+#### **Open Bugs**
+- None identified  
+
+---
+
+### Feature Testing
+
+- **Card Shuffle:** Cards shuffled into new arrangement each game  
+- **Game State Reset:** Complete reset on restart  
+- **Win Condition:** Correct detection when all pairs matched  
+- **Mobile Layout:** Responsive across screen sizes  
+
+---
+
+### Browser Compatibility
+
+- **Chrome 90+:** ✅ Fully functional  
+- **Firefox 88+:** ✅ Fully functional  
+- **Safari 14+:** ✅ Fully functional  
+- **Edge 90+:** ✅ Fully functional  
+
+---
+
+### Screenshots
+
+- **Main Game Interface:** Board with cards, counters, and controls  
+- **Win Message:** Victory popup with statistics  
+- **Mobile View:** Responsive layout  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 **Bug Discovered**
 - Modal opacity issues on small screens  
