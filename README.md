@@ -2,19 +2,36 @@
 ## Table of Contents
 1. [UX](#ux)
    - [Project Goals](#project-goals)
+
    - [User Stories](#user-stories)
+      - [New Visitor](#new-visitor)
+      - [Repeat User](#repeat-user)
+      - [Regular User](#regular-user)
+      - [Game Owner / Developer](#game-owner--developer)
+
    - [Design Choices](#design-choices)
+      - [Colour Scheme](#colour-scheme)
+      - [Typography](#typography)
+      - [Layout & Responsiveness](#layout--responsiveness)
+      - [Home page screenshot ](#home-page-screenshot)
+      - [Icons](#icons)
    - [Wireframes](#wireframes)
+      -[Game Board / Play Area](#game-board--play-area)
 2. [Features](#features)
    - [Existing Features](#existing-features)
    - [Features Left to Implement](#features-left-to-implement)
 3. [Technologies Used](#technologies-used)
+
 4. [Testing](#testing)
-   - [Bugs Discovered ](#bugs-discovered)
-   - [Solved Issues](#solved-issues)
+   - [User Stories Testing](#user-stories-testing)
+   - [Manual Testing of Game Elements](#manual-testing-of-game-elements)
+   - [Responsiveness Testing](#responsiveness-testing)
+   - [code validation](#code-validation)
+   - [Bug Documentation](#bug-documentation)
 5. [Deployment](#deployment)
-   - [How to Run This Project Locally](#how-to-run-this-project-locally)
+
 6. [Credits](#credits)
+   - [Project Methodology](#project-methodology)
    - [Content and code ](#content-and-code) 
    - [Acknowledgement](#acknowledgement)
 
@@ -105,8 +122,6 @@ Below are the pages and versions for different devices.
 - **Tablet:** [Link to PDF](assets/wireframes/Milestone-project-2-Ipad%20.pdf)  
 - **Mobile:** [Link to PDF](assets/wireframes/milestone-project-2-mobile%20.pdf)  
 
-
-
 ---
 
 ## Features
@@ -135,10 +150,9 @@ Below are the pages and versions for different devices.
 
 ## Testing
 
-
 ### User Stories Testing
-
-#### **New Visitor Stories**
+**New Visitor Stories**
+#### 
 
  **1. As a new user, I would like to know how to play the Memory Game upon opening the site**
 - **Expected:** Clear instructions visible immediately when page loads  
@@ -269,6 +283,7 @@ Below are the pages and versions for different devices.
 - **Result:** Functions are organized with clear separation of logic  
 - **Fix:** None required  
 
+----
 ### Manual Testing of Game Elements
 #### **Card Flip Functionality**
 - **Expected:** Clicking a card flips it to reveal the symbol with smooth animation  
@@ -314,7 +329,7 @@ Below are the pages and versions for different devices.
 
 ---
 
-### Double-Click Guard Test
+#### ** Double-Click Guard Test**
 
 - **Expected:** Clicking the same card twice should not count as a move or break the game  
 - **Testing:** Clicked same card twice rapidly and monitored behavior  
@@ -328,96 +343,61 @@ Below are the pages and versions for different devices.
 - **Desktop (1200px+):** 6-column grid displayed perfectly  
 - **Tablet (768px):** 4-column grid maintained good layout  
 - **Mobile (375px):** Adjusted to a 3-column grid 
+- [Responsive Design Tester](https://solite.in/responsive-design-tester?utm_source=chatgpt.com)
 
-<div align="center"><img src="assets/images/home-page.png"></div>
+<div align="center"><img src="assets/images/responsive-test.png"></div>
 ---
+
 
 ### Code Validation
 
-- **HTML Validation:** Passed — no errors using W3C Validator  
+- **HTML Validation:** Passed — no errors using [W3C Validator](https://validator.w3.org/#validate_by_input)
 <div align="center"><img src="assets/images/html-checked.png"></div>
 
-- **CSS Validation:** Passed — no errors using W3C CSS Validator  
+- **CSS Validation:** Passed — no errors using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/)
 <div align="center"><img src="assets/images/css-validator-checked.png"></div>
 
-- **JavaScript Validation:** Passed — no critical errors using JSHint  
+- **JavaScript Validation:** Passed — no critical errors using [JSHint](https://jshint.com/)  
 <div align="center"><img src="assets/images/jshint-valid.png"></div>
 ---
-
 
 ### Bug Documentation
 
 #### **Resolved Bugs**
 
 **1. Card Matching Logic Issue**  
-- **Problem:** Incorrect card comparisons  
-- **Root Cause:** Compared DOM elements instead of data values  
-- **Fix:** Updated to use `dataset.value`  
+- **Problem:** 
+Incorrect card comparisons  
+
+- **Root Cause:** 
+The comparison logic was comparing DOM element references (firstCard === secondCard) instead of the actual symbol values. 
+This occurred because the code was checking if two card elements were the same object, rather than comparing their content.
+<div align="center"><img src="assets/images/before.png"></div>
+
+- **solution:** 
+Updated the comparison logic to extract and compare the actual symbol content from the card elements using querySelector and textContent:
+ <div align="center"><img src="assets/images/after.png"></div>
 - **Status:** ✅ Fixed  
 
-**2. Timer Reset Issue**  
-- **Problem:** Timer did not always clear on restart  
-- **Root Cause:** Interval not cleared before creating new one  
-- **Fix:** Added `clearInterval()` before starting timer  
-- **Status:** ✅ Fixed  
+**2. Timer Reset Issue** 
 
-#### **Open Bugs**
-- None identified  
+ **Problem**
+  Rapidly clicking the restart button caused multiple timer intervals to run simultaneously,
+ resulting in the game clock accelerating (e.g., counting 2x or 3x faster). 
+**Root Cause** 
+The `gameState.timerInterval` variable was being overwritten by a new `setInterval` call on each restart, 
+losing the reference to previously running intervals. 
+The `clearInterval()` function only cleared the most recent interval ID.
 
----
+<div align="center"><img src="assets/images/code-before-fix.png"></div>
 
-### Feature Testing
+| **Solution** | Implemented a check and cleanup mechanism using `clearInterval(gameState.timerInterval)` at the start of both the `initGame()` and `startTimer()` functions to ensure all previous intervals are terminated before starting a new one. 
+| **Testing Result** 
+ The timer now resets cleanly, and the clock increments accurately at 1-second intervals, regardless of restart button spamming. 
 
-- **Card Shuffle:** Cards shuffled into new arrangement each game  
-- **Game State Reset:** Complete reset on restart  
-- **Win Condition:** Correct detection when all pairs matched  
-- **Mobile Layout:** Responsive across screen sizes  
-
----
-
-### Browser Compatibility
-
-- **Chrome 90+:** ✅ Fully functional  
-- **Firefox 88+:** ✅ Fully functional  
-- **Safari 14+:** ✅ Fully functional  
-- **Edge 90+:** ✅ Fully functional  
+<div align="center"><img src="assets/images/after-fixed.png"></div>
 
 ---
-
-### Screenshots
-
-- **Main Game Interface:** Board with cards, counters, and controls  
-- **Win Message:** Victory popup with statistics  
-- **Mobile View:** Responsive layout  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-**Bug Discovered**
-- Modal opacity issues on small screens  
-**Fix:** Adjusted CSS to properly overlay modals and center content.
 
 
 ## Deployment
@@ -472,9 +452,6 @@ Throughout the project, I used **Git** to save and store progress:
            <img src="assets/images/link-live.png" />
          </div>
 
-
-
-
 **Deployment Issue**
 At first, the deployment did not work because GitHub created an extra folder inside the repository.  
 That folder contained the `assets/`, `index.html`, and `README.md` instead of placing them in the root of the repository.  
@@ -488,18 +465,16 @@ Since GitHub Pages only looks for `index.html` in the **root** (or `/docs` if co
 **Deployed Site**
 The live site can be viewed here:  
 👉 [Project Link](https://eandachew.github.io/Memory-Game/)
-- 
-
-### How to Run This Project Locally
-1. repository.
-2. Open index.html in your browser or run a local server.
-
----
 
 ## Credits
+### Project Methodology
+**Structure:** 
+Followed Code Institute's best practices for project organization, using a clean, semantic structure with separate files for HTML, CSS, and JavaScript.
 
+**Responsiveness:** 
+Utilized a mobile-first design approach, applying principles of progressive enhancement to ensure graceful degradation and optimal viewing across all screen sizes.
 ### Content and code 
-- Game logic written by me using HTML, CSS, and JavaScript.
+- Game logic written by me using HTML, CSS, and JavaScript using visual studio code.
 ### Acknowledgement
 
 - Code Institute for getting me to this point
